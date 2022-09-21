@@ -1,5 +1,4 @@
 import child_process from 'child_process';
-import {StringDecoder} from 'string_decoder';
 import {repairPath} from './fileUtils';
 
 export function testCommand(command: string,

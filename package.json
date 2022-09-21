@@ -10,7 +10,7 @@
     "firebase",
     "CMS"
   ],
-  "description": "Installation tool for Pancodex CMS Firebase API",
+  "description": "Creates a backend Firebase API for Pancodex CMS",
   "repository": {
     "type": "git",
     "url": "https://github.com/pancodex-pro/firebase-api.git"
@@ -38,15 +38,16 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "22.0.1",
     "@rollup/plugin-node-resolve": "13.3.0",
-    "@types/fs-extra": "^9.0.13",
-    "@types/lodash": "^4.14.185",
+    "@types/fs-extra": "9.0.13",
+    "@types/lodash": "4.14.185",
     "@types/node": "18.7.18",
     "@types/react": "18.0.15",
     "@types/react-dom": "18.0.6",
-    "@types/request": "^2.48.8",
-    "@types/tar-fs": "^2.0.1",
+    "@types/request": "2.48.8",
+    "@types/tar-fs": "2.0.1",
     "del-cli": "4.0.1",
     "rollup": "2.76.0",
+    "rollup-plugin-node-externals": "5.0.0",
     "rollup-plugin-typescript2": "0.32.1",
     "typescript": "4.7.4"
   },
@@ -55,8 +56,9 @@
     "commander": "9.4.0",
     "cross-spawn": "7.0.3",
     "fs-extra": "10.1.0",
-    "lodash": "^4.17.21",
-    "request": "^2.88.2",
-    "tar-fs": "^2.1.1"
+    "lodash": "4.17.21",
+    "nanoid": "3.3.4",
+    "request": "2.88.2",
+    "tar-fs": "2.1.1"
   }
 }

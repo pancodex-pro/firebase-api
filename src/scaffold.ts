@@ -1,9 +1,22 @@
 import template from 'lodash/template';
 import {readFile, writeFile} from './fileUtils';
 
-export async function setProjectId(sourceFilePath: string, projectId: string): Promise<void> {
+interface SecretData {
+    passId: string;
+    projectId: string;
+    secret: string;
+}
+
+export async function setProjectId(sourceFilePath: string, destFilePath: string, projectId: string): Promise<void> {
     const fileData: any = await readFile(sourceFilePath);
     const compiled = template(fileData);
-    const resultFileData = compiled({firebase_project_id: projectId});
-    await writeFile(sourceFilePath, resultFileData);
+    const resultFileData = compiled({projectId});
+    await writeFile(destFilePath, resultFileData);
+}
+
+export async function setSecret(sourceFilePath: string, destFilePath: string, secretData: SecretData): Promise<void> {
+    const fileData: any = await readFile(sourceFilePath);
+    const compiled = template(fileData);
+    const resultFileData = compiled(secretData);
+    await writeFile(destFilePath, resultFileData);
 }
